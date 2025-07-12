@@ -1,0 +1,273 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #f0f4f8, #ffffff);
+    color: #333;
+    padding-top: 56px;
+    line-height: 1.6;
+}
+
+/* Container principal */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Títulos */
+h1, h2, h3 {
+    color: #1a237e;
+    margin-bottom: 15px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    min-height: 380px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-bottom: 50px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #1a237e;
+}
+
+.card-text {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+/* Card de detalhes */
+.detalhe-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.detalhe-card h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #1a237e;
+}
+
+/* Layout da imagem e texto */
+.post-content {
+    display: flex;
+    gap: 25px;
+}
+
+.post-image-container {
+    flex: 0 0 35%;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.post-image:hover {
+    transform: scale(1.02);
+}
+
+.post-text {
+    flex: 1;
+    font-size: 1.05rem;
+}
+
+/* Grid de posts */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Botões */
+.btn-primary, .btn-ver-detalhes, .btn-enviar {
+    background-color: #1a237e;
+    border-color: #28a0c5;
+    color: white;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover, .btn-ver-detalhes:hover, .btn-enviar:hover {
+    background-color: #0d47a1;
+    border-color: #0d47a1;
+    transform: translateY(-2px);
+}
+
+.btn-ver-detalhes {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Botão Voltar */
+.btn-voltar {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #f8f9fa;
+    color: #1a237e;
+    border: 2px solid #1a497e;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-top: 30px;
+}
+
+.btn-voltar:hover {
+    background: #1a237e;
+    color: white;
+}
+
+/* Formulário */
+.form-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 15px;
+}
+
+/* Comentários */
+.comentarios-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.comentario {
+    background: #f8f9fa;
+    padding: 15px;
+    border-left: 4px solid #1a237e;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.comentario-data {
+    font-size: 0.8rem;
+    color: #666;
+    display: block;
+    margin-top: 8px;
+}
+
+/* Mensagens */
+.alert {
+    margin-top: 20px;
+}
+
+.card-sucesso {
+    background: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.empty-message {
+    text-align: center;
+    font-style: italic;
+    color: #95a5a6;
+    margin-top: 40px;
+}
+
+/* Responsiviade */
+@media (max-width: 768px) {
+    .post-content {
+        flex-direction: column;
+    }
+
+    .post-image-container {
+        flex: 1;
+        margin-bottom: 20px;
+    }
+
+    .detalhe-card h1 {
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        min-height: 320px;
+    }
+    
+    .btn-ver-detalhes,
+    .btn-enviar,
+    .btn-voltar {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}

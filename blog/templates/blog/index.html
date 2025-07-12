@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}Blog - Postagens{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <header class="header">
+            <h1>📝 Postagens</h1>
+        </header>
+
+        {% if messages %}
+        <div class="card-sucesso">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if posts %}
+        <div class="cards-grid">
+            {% for post in posts %}
+            <div class="card">
+                {% if post.imagem %}
+                <img class="card-img" src="{{ post.imagem.url }}"
+                    alt="Imagem do post {{ post.titulo|default:'sem título' }}">
+                {% endif %}
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.titulo }}</h2>
+                    <a class="btn-ver-detalhes" href="{% url 'detalhes' post.id %}">Ver detalhes</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="empty-message">Nenhum post publicado ainda, sorry 😴</p>
+        {% endif %}
+    </div>
+{% endblock %}

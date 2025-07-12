@@ -1,0 +1,55 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}{{ post.titulo }}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    {% if messages %}
+    <div class="card-sucesso">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="card detalhe-card">
+        <h1 class="card-title">{{ post.titulo }}</h1>
+
+        <div class="post-content">
+            {% if post.imagem %}
+            <div class="post-image-container">
+                <img src="{{ post.imagem.url }}" alt="{{ post.titulo }}" class="post-image">
+            </div>
+            {% endif %}
+            <div class="post-text">
+                <p class="card-text">{{ post.texto }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card comentarios-card">
+        <h2>💬 Comentários</h2>
+        {% for comentario in comentarios %}
+        <div class="comentario">
+            <p>{{ comentario.texto }}</p>
+            <small class="comentario-data">{{ comentario.com_date }}</small>
+        </div>
+        {% empty %}
+        <p class="empty-message">Ainda não há comentários. Seja o primeiro!</p>
+        {% endfor %}
+    </div>
+
+    <div class="card form-card">
+        <h3>Adicionar Comentário</h3>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+    </div>
+
+    <a href="{% url 'index' %}" class="btn-voltar">← Voltar</a>
+</div>
+{% endblock %}
